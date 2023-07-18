@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { SignIn } from "./pages/SignIn";
 import { SignUp } from "./pages/SignUp";
+import { Tinapa } from "./pages/Tinapa";
 import { Protected } from "./pages/Protected";
 import { RequireAuth } from "./components/RequireAuth";
 
@@ -15,6 +16,7 @@ export const App = () => {
         <Routes>
           <Route index element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/tinapa" element={<Tinapa />} />
           <Route element={<RequireAuth />}>
             <Route path="/protected" element={<Protected />} />
           </Route>

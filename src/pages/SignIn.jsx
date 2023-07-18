@@ -3,6 +3,9 @@ import { useNavigate, Link } from "react-router-dom";
 
 import { usePocket } from "../contexts/PocketContext";
 
+import { Tae } from "../components/Tae"
+import { SignMo } from "../components/SignMo"
+
 export const SignIn = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -27,6 +30,10 @@ export const SignIn = () => {
         <button type="submit">Login</button>
         <Link to="/">Go to Sign Up</Link>
       </form>
+
+      <Tae />
+      <SignMo />
+
     </section>
   );
 };

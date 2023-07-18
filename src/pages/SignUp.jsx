@@ -20,6 +20,8 @@ export const SignUp = () => {
 
   return (
     <section>
+      <h1>Go to /tinapa to check if signed in in console log</h1>
+      <h1>Every test buttons output is in console log</h1>
       <h2>Sign Up</h2>
       <form onSubmit={handleOnSubmit}>
         <input placeholder="Email" type="email" ref={emailRef} />

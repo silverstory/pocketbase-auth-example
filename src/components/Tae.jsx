@@ -6,19 +6,23 @@ export const Tae = () => {
   const basura = async () => {
     const pb = new PocketBase("http://127.0.0.1:8090");
 
-    const record = await pb
-      .collection("sourcerecipecategories")
-      .getOne("4697cqwfyik1w30");
+    try {
+      const record = await pb
+        .collection("sourcerecipecategories")
+        .getOne("4697cqwfyik1w30");
 
-    console.log(record);
+      console.log(record);
 
-    const records = await pb
-      .collection("sourcerecipecategories")
-      .getList(1, 50, {
-        filter: 'created >= "2022-01-01 00:00:00"',
-      });
+      const records = await pb
+        .collection("sourcerecipecategories")
+        .getList(1, 50, {
+          filter: 'created >= "2022-01-01 00:00:00"',
+        });
 
-    console.log(records);
+      console.log(records);
+    } catch (err) {
+      console.log('error', err);
+    }
   };
 
   return (

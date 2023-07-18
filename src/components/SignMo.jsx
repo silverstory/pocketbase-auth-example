@@ -8,7 +8,7 @@ export const SignMo = () => {
 
     const authData = await pb
       .collection("users")
-      .authWithPassword("react.router.budget@gmail.com", "Abcd1234@");
+      .authWithPassword("shet@shet.com", "Qwe6789%");
 
     console.log(authData);
 
@@ -21,10 +21,19 @@ export const SignMo = () => {
     // pb.authStore.clear();
   };
 
+  const waste = async () => {
+    const pb = new PocketBase("http://127.0.0.1:8090");
+
+    // "logout" the last authenticated model
+    pb.authStore.clear();
+    
+  };
+
   return (
     <section>
       <h2>Sign Mo</h2>
       <button onClick={basura}>Sign Mo Na</button>
+      <button onClick={waste}>Logout Mo</button>
     </section>
   );
 };

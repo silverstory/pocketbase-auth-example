@@ -8,9 +8,22 @@ export const SignMo = () => {
 
     const authData = await pb
       .collection("users")
-      .authWithPassword("shet@shet.com", "Qwe6789%");
+      .authWithPassword("chef@chef.com", "Zxcv4321!");
 
     console.log(authData);
+
+    // pb.authStore.exportToCookie();
+
+    const cookie = pb.authStore.exportToCookie({ httpOnly: false });
+
+    console.log('cookie: ', cookie.toString());
+
+    // getting the user you can still get the user client side by using
+
+    // pb.authStore.loadFromCookie(document?.cookie ?? "");
+    // pb.authStore.model
+
+    // document.cookie = pb.authStore.exportToCookie({ httpOnly: false })
 
     // after the above you can also access the auth data from the authStore
     console.log(pb.authStore.isValid);
